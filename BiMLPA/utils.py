@@ -1,6 +1,5 @@
 import networkx as nx
 from sklearn.metrics import normalized_mutual_info_score as NMI
-from community import draw_community, number_of_communities
 
 
 def relabeling(G):
@@ -33,7 +32,7 @@ def calc_NMI(G):
     return NMI(truth_top, pred_top), NMI(truth_bottom, pred_bottom)
 
 
-def output_community(G, filename):
+def output_community(G):
     top = {n: d['label'] for n, d in G.nodes(data=True) if d['bipartite']==0}
     bottom = {n: d['label'] for n, d in G.nodes(data=True) if d['bipartite']==1}
 
@@ -43,12 +42,9 @@ def output_community(G, filename):
     top_com_list = [[] for _ in range(top_max)]
     for k, v in top.items():
         top_com_list[v-1].append(k)
-    top_com_list = [str(com)[1:-1]+'\n' for com in top_com_list if len(com)>0]
 
     bottom_com_list = [[] for _ in range(bottom_max)]
     for k, v in bottom.items():
         bottom_com_list[v-1].append(k)
-    bottom_com_list = [str(com)[1:-1]+'\n' for com in bottom_com_list if len(com)>0]
-    with open(filename, 'w') as f:
-        f.writelines(top_com_list)
-        f.writelines(bottom_com_list)
+
+    return top_com_list, bottom_com_list

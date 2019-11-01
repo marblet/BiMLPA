@@ -8,10 +8,10 @@
 ```python
 import networkx as nx
 
-from bimlpa import *
-from community import *
-from generator import generate_network
-from utils import calc_NMI, relabeling
+from BiMLPA.bimlpa import *
+from BiMLPA.community import *
+from BiMLPA.generator import generate_network
+from BiMLPA.utils import calc_NMI, relabeling
 
 if __name__ == "__main__":
 
