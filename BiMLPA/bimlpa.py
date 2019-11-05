@@ -1,12 +1,12 @@
 import networkx as nx
 import numpy as np
-import sys
 
 from collections import Counter
 from math import sqrt
-from random import shuffle, choice, randrange
+from random import choice
 
-class BiMLPA:
+
+class BiMLPA(object):
     def __init__(self, G, threshold, max_prop_label, max_MM_iter=100, max_MS_iter=100):
         self.G = G
         self.threshold = threshold

@@ -1,0 +1,5 @@
+networkx<=2.4
+numpy
+sklearn
+matplotlib
+pytest>=3.6
