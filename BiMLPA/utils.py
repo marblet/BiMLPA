@@ -19,12 +19,12 @@ def calc_NMI(G):
     # top と bottom 両方を計算して返す
     top = {n: d for n, d in G.nodes(data=True) if d['bipartite'] == 0}
     bottom = {n: d for n, d in G.nodes(data=True) if d['bipartite'] == 1}
-    pred_top  = []
+    pred_top = []
     truth_top = []
     for n, d in top.items():
         pred_top.append(d['label'])
         truth_top.append(d['community'])
-    pred_bottom  = []
+    pred_bottom = []
     truth_bottom = []
     for n, d in bottom.items():
         pred_bottom.append(d['label'])
@@ -33,8 +33,8 @@ def calc_NMI(G):
 
 
 def output_community(G):
-    top = {n: d['label'] for n, d in G.nodes(data=True) if d['bipartite']==0}
-    bottom = {n: d['label'] for n, d in G.nodes(data=True) if d['bipartite']==1}
+    top = {n: d['label'] for n, d in G.nodes(data=True) if d['bipartite'] == 0}
+    bottom = {n: d['label'] for n, d in G.nodes(data=True) if d['bipartite'] == 1}
 
     top_max = max(top.values())
     bottom_max = max(bottom.values())

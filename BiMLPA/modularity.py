@@ -2,8 +2,8 @@ import networkx as nx
 from collections import defaultdict, Counter
 from itertools import combinations
 
-# calculate the modularity based on labels assigned each node
 
+# calculate the modularity based on labels assigned each node
 def guimera_modularity(G):
     top = {v: d for v, d in G.nodes(data=True) if d['bipartite'] == 0}
     bottom = {v: d for v, d in G.nodes(data=True) if d['bipartite'] == 1}
@@ -39,6 +39,7 @@ def guimera_modularity(G):
             Q_bottom += tmpQ
 
     return Q_top*2, Q_bottom*2
+
 
 def liu_modularity(G):
     top = {v: d for v, d in G.nodes(data=True) if d['bipartite'] == 0}
@@ -134,6 +135,7 @@ def murata_modularity(G):
         Cl = max(coms, key=coms.get)
         Q_bottom += (coms[Cl] / (2 * E) - bottomC_to_V[Ck] * topC_to_V[Cl] / (4 * E * E))
     return Q_top + Q_bottom
+
 
 def suzuki_modularity(G):
     top = {v: d for v, d in G.nodes(data=True) if d['bipartite'] == 0}

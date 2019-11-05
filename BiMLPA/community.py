@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 def draw_community(G, pos=None):
-    if pos == None:
+    if pos is None:
         top = {n for n, d in G.nodes(data=True) if d['bipartite'] == 0}
         bottom = set(G) - top
         bottom = list(bottom)
@@ -30,8 +30,6 @@ def draw_community(G, pos=None):
             pos_label[label] += 1
 
     color = [d['label'] for node, d in G.nodes(data=True)]
-    color_top = [d['label'] for node, d in G.nodes(data=True) if d['bipartite'] == 0]
-    color_bottom = [d['label'] for node, d in G.nodes(data=True) if d['bipartite'] == 1]
 
     nx.draw_networkx(G, pos, node_color=color)
     plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False)
@@ -42,6 +40,7 @@ def draw_community(G, pos=None):
     plt.tick_params(length=0)
 
     plt.show()
+
 
 def number_of_communities(G):
     c_top = Counter([d['label'] for n, d in G.nodes(data=True) if d['bipartite'] == 0])
