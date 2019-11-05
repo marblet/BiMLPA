@@ -18,7 +18,7 @@ setup(name='bimlpa',
       license='BSD-Clause-2',
       description='Community detection in bipartite networks using multi-label propagation algorithm',
       url='https://github.com/hbkt/BiMLPA',
-      author=['Hibiki'],
+      author=['Hibiki Taguchi'],
       author_email='',
       classifiers=[
           # How mature is this project? Common values are
