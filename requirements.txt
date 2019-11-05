@@ -1,5 +1,5 @@
 networkx<=2.4
 numpy
-sklearn
+scikit-learn
 matplotlib
 pytest>=3.6

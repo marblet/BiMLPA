@@ -41,6 +41,6 @@ setup(name='bimlpa',
           'Programming Language :: Python :: 3'
       ],
       keywords='complex-networks community-discovery labeled-graph',
-      install_requires=['sklearn', 'matplotlib', 'networkx', ''],
+      install_requires=['scikit-learn', 'matplotlib', 'networkx', ''],
       packages=find_packages(exclude=["*.test", "*.test.*", "test.*", "test", "BiMLPA.test", "BiMLPA.test.*"]),
       )
