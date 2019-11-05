@@ -33,10 +33,6 @@ def draw_community(G, pos=None):
     color_top = [d['label'] for node, d in G.nodes(data=True) if d['bipartite'] == 0]
     color_bottom = [d['label'] for node, d in G.nodes(data=True) if d['bipartite'] == 1]
 
-    # pos = nx.spring_layout(G)
-    # pos = nx.kamada_kawai_layout(G)
-    print(pos)
-
     nx.draw_networkx(G, pos, node_color=color)
     plt.tick_params(labelbottom=False, labelleft=False, labelright=False, labeltop=False)
     plt.gca().spines['right'].set_visible(False)
