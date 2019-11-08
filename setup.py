@@ -14,7 +14,7 @@ __email__ = ""
 
 
 setup(name='bimlpa',
-      version='0.1.0',
+      version='0.1.2',
       license='BSD-Clause-2',
       description='Community detection in bipartite networks using multi-label propagation algorithm',
       url='https://github.com/hbkt/BiMLPA',
