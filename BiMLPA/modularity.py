@@ -1,4 +1,3 @@
-import networkx as nx
 from collections import defaultdict, Counter
 from itertools import combinations
 
@@ -39,57 +38,6 @@ def guimera_modularity(G):
             Q_bottom += tmpQ
 
     return Q_top*2, Q_bottom*2
-
-
-def liu_modularity(G):
-    top = {v: d for v, d in G.nodes(data=True) if d['bipartite'] == 0}
-    bottom = {v: d for v, d in G.nodes(data=True) if d['bipartite'] == 1}
-
-    top_coms = defaultdict(set)
-    bottom_coms = defaultdict(set)
-    for v, d in top.items():
-        top_coms[d['label']].add(v)
-    for v, d in bottom.items():
-        bottom_coms[d['label']].add(v)
-    size_top_coms = {v: len(d) for v, d in top_coms.items()}
-    size_bottom_coms = {v: len(d) for v, d in bottom_coms.items()}
-
-    topC_to_bottomC = dict()
-    i_to_bottomC = dict()
-    j_to_topC = dict()
-    for c, v in top_coms.items():
-        c_count = Counter()
-        for u in v:
-            u_count = Counter()
-            for neig in G.neighbors(u):
-                u_count.update({G.nodes[neig]['label']: 1})
-            i_to_bottomC[u] = u_count
-            c_count.update(u_count)
-        topC_to_bottomC[c] = c_count
-
-    for c, v in bottom_coms.items():
-        for u in v:
-            u_count = Counter()
-            for neig in G.neighbors(u):
-                u_count.update({G.nodes[neig]['label']: 1})
-            j_to_topC[u] = u_count
-
-    Q = 0
-    for i, d_i in top.items():
-        com_i = d_i['label']
-        size_com_i = size_top_coms[com_i]
-        for j, d_j in bottom.items():
-            com_j = d_j['label']
-            tmpQ = 0
-            if G.has_edge(i, j):
-                tmpQ = 1
-            if i_to_bottomC[i].get(com_j, 0) != 0 and j_to_topC[j].get(com_i, 0):
-                tmpQ -= i_to_bottomC[i].get(com_j, 0) * j_to_topC[j].get(com_i, 0) / topC_to_bottomC[com_i][com_j]
-            tmpQ = tmpQ * tmpQ
-            size_com_j = size_bottom_coms[com_j]
-            tmpQ /= size_com_i * size_com_j
-            Q += tmpQ
-    return Q
 
 
 def murata_modularity(G):
