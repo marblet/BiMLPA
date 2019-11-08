@@ -1,4 +1,4 @@
 from .bimlpa import *
 from .community import *
-from .generator import generate_network, generate_network_withName, generate_weighted_network
+from .generator import generate_network, generate_network_with_name
 from .utils import relabeling, output_community, calc_NMI
