@@ -29,7 +29,8 @@ def calc_NMI(G):
     for n, d in bottom.items():
         pred_bottom.append(d['label'])
         truth_bottom.append(d['community'])
-    return NMI(truth_top, pred_top), NMI(truth_bottom, pred_bottom)
+    return NMI(truth_top, pred_top, average_method='arithmetic'), \
+           NMI(truth_bottom, pred_bottom, average_method='arithmetic')
 
 
 def output_community(G):
@@ -41,10 +42,10 @@ def output_community(G):
 
     top_com_list = [[] for _ in range(top_max)]
     for k, v in top.items():
-        top_com_list[v-1].append(k)
+        top_com_list[v - 1].append(k)
 
     bottom_com_list = [[] for _ in range(bottom_max)]
     for k, v in bottom.items():
-        bottom_com_list[v-1].append(k)
+        bottom_com_list[v - 1].append(k)
 
     return top_com_list, bottom_com_list
