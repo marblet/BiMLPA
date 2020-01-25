@@ -1,4 +1,6 @@
 # BiMLPA
+"BiMLPA: Community Detection in Bipartite Networks by Multi-Label Propagation", NetSci-X 2020 https://link.springer.com/chapter/10.1007/978-3-030-38965-9_2
+
 [マルチラベル伝搬法を用いた二部ネットワークからのコミュニティ抽出(JSAI 2019)](https://confit.atlas.jp/guide/event-img/jsai2019/4B2-J-3-02/public/pdf?type=in)
 
 二部ネットワークにおける，多対多対応のコミュニティ抽出を行うプログラムです．
