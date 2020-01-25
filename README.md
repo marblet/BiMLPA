@@ -1,4 +1,6 @@
 # BiMLPA
+"BiMLPA: Community Detection in Bipartite Networks by Multi-Label Propagation", NetSci-X 2020
+https://link.springer.com/chapter/10.1007/978-3-030-38965-9_2
 
 This is the implementation of BiMLPA.
 BiMLPA is to detect the many-to-many correspondence community in bipartite networks using multi-label propagation algorithm.
