@@ -17,7 +17,7 @@ sudo pip install bimlpa
 
 If you like to install the latest version of the package from the repository use:
 ```bash
-sudo pip install git+https://github.com/hbkt/BiMLPA
+sudo pip install git+https://github.com/marblet/BiMLPA
 ```
 
 
