@@ -14,7 +14,7 @@ sudo pip install bimlpa
 
 レポジトリからlatest versionをインストールしたい場合:
 ```bash
-sudo pip install git+https://github.com/hbkt/BiMLPA
+sudo pip install git+https://github.com/marblet/BiMLPA
 ```
 
 ## 使い方
